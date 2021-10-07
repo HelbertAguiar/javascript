@@ -1,0 +1,65 @@
+.page-footer {
+    padding-top: 0px;
+    color: rgb(243, 240, 240);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+nav {
+    color: rgb(243, 240, 240);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.busca_csv {
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+}
+
+.search_nr_ocorrencia {
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#inputFile {
+    margin: 15px;
+    margin-left: 150px;
+}
+
+#pesquisa {
+    margin-left: 140px;
+}
+
+
+/* AJUSTA PLACEHOLDER */
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+ img {
+     /* padding: 10px; */
+     width: 170px;
+     height: 75px;
+ }
