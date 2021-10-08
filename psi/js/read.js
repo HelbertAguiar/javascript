@@ -12,11 +12,11 @@ function renderizaTabela(event) {
         let text = reader.result;
         constroiTabela(text, id_table);
 
-        // let el = document.getElementById(id_table);
-        // el.setAttribute('style', 'display:none');
-
         let el_busca = document.getElementById("pesquisa");
         el_busca.removeAttribute('disabled');
+
+        let el_btn = document.getElementById("btn_estatistica");
+        el_btn.removeAttribute('disabled');
 
     };
     
@@ -51,33 +51,29 @@ function constroiTabela ( csv , id_table ) {
         table.appendChild(tr);
     }
 
+    // PERMITE PREENCHER O CAMPO INPUT, DESBLOQUEIA-O
     theader = document.getElementById('tr_cabecalho').removeAttribute('disabled');
 
 }
 
 function trata_input(event){
+
+    const rows = document.querySelectorAll('tr');
+    rows.forEach(function(row) {
+        row.setAttribute('style', 'display:none');
+    })
+
     var input = event.target;
     console.log('A chave eh: ' + input.value);
-    el = document.getElementById(input.value).removeAttribute('style');
+    
+    el = document.getElementById(input.value)
+    if (typeof(el) != 'undefined' && el != null) {
+        el.removeAttribute('style');
+    } else {
+        console.log('Não foi localizado o registro nº: ' + input.value + ' na tabela');
+        M.toast({html: 'Não foi localizado o registro nº: ' + input.value + ' na tabela'})
+    }
+
+    header = document.getElementById('tr_cabecalho').removeAttribute('style');
+
 }
-
-// $("#search").on("keyup", function() {
-
-//     var value = $(this).val();
-
-//     $("table tr").each(function(index) {
-//         if (index !== 0) {
-
-//             $row = $(this);
-
-//             var id = $row.find("td:first").text();
-
-//             if (id.indexOf(value) !== 0) {
-//                 $row.hide();
-//             }
-//             else {
-//                 $row.show();
-//             }
-//         }
-//     });
-// });

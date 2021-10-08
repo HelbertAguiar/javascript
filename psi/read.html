@@ -1,27 +1,108 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet"> -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="./css/materialize.min.css">
         <link rel="stylesheet" href="css/estilo.css">
         <script src="./js/read.js" type="text/javascript"></script>
     </head>
+
     <body>
 
         <nav>
+
+            <!-- BOTOES NO HEADER (COMO USAR, SOBRE O AUTOR, ESTATISTICAS) -->
             <div class="nav-wrapper">
-              <a href="#" class="brand-logo left"><img src="img/logo2.png"></a>
-              <a href="#" class="brand-logo center">Consulta ocorrências</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="#">Como usar?</a></li>
-                <li><a href="#">Estatisticas </a></li>
-                <li><a href="#">Sobre o autor</a></li>
-              </ul>
+
+                <a href="#" class="brand-logo left"><img src="img/logo2.png"></a>
+                <a href="#" class="brand-logo center">Consulta ocorrências</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modalComoUsar">Como usar?</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modalSobreAutor">Sobre o autor</a></li>
+                    <li><button id="btn_estatistica" data-target="modalEstatisticas" class="btn modal-trigger" disabled>Estatisticas</button></li>
+                </ul>
+
+                <!-- Modal Structure -->
+                <div id="modalComoUsar" class="modal">
+                    <div class="modal-content">
+                        <h4>Instruções</h4>
+                        <p id='como_usar'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+                    </div>
+                </div>
+
+                <!-- Modal Structure -->
+                <div id="modalSobreAutor" class="modal">
+
+                    <div class="modal-content">
+                        <h4>Sobre o autor</h4>
+                        <p id='sobre_o_autor'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+                    </div>
+                    
+                </div>
+                
+                <!-- Modal Structure -->
+                <div id="modalEstatisticas" class="modal">
+                    
+                    <div class="modal-content">
+                        <h4>Estatistica</h4>
+                        
+                        <hr><hr>
+                        <div id="chartDiv" style="width: 100%; height: 400px;"></div>
+                        <hr><hr>
+
+                        <!-- tabela estatistica -->
+                        <table class="responsive-table striped">
+                            
+                            <thead>
+                                <tr><th>Assunto</th><th>Quantidade de registros do assunto</th></tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr><td>CONTAS</td><td>1309</td></tr>
+                                <tr><td>HABITAÇÃO</td><td>932</td></tr>
+                                <tr><td>EMPRÉSTIMOS E FINANCIAMENTOS</td><td>790</td></tr>
+                                <tr><td>AGÊNCIA</td><td>575</td></tr>
+                              <tr><td>CARTÕES</td><td>389</td></tr>
+                              <tr><td>CANAIS DE ATENDIMENTO</td><td>150</td></tr>
+                              <tr><td>TARIFAS</td><td>146</td></tr>
+                              <tr><td>SERVIÇOS BANCÁRIOS</td><td>115</td></tr>
+                              <tr><td>FGTS</td><td>90</td></tr>
+                              <tr><td>INTERNET/INTRANET/APP</td><td>90</td></tr>
+                              <tr><td>BENEFÍCIOS, PROGRAMAS E POLÍTICAS SOCIAIS</td><td>46</td></tr>
+                              <tr><td>VENDA CASADA</td><td>41</td></tr>
+                              <tr><td>APLICAÇÕES E INVESTIMENTOS</td><td>36</td></tr>
+                              <tr><td>PRODUTOS DE FIDELIZAÇÃO</td><td>11</td></tr>
+                              <tr><td>PRODUTOS LOTÉRICOS</td><td>9</td></tr>
+                              <tr><td>CENTRAIS DE TELESSERVIÇOS</td><td>4</td></tr>
+                              <tr><td>SISTEMAS E APLICATIVOS</td><td>1</td></tr>
+                              <tr><td>CENTRAIS DE TELECOBRANÇA</td><td>1</td></tr>
+                            </tbody>
+                            
+                        </table>
+                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+                    </div>
+
+                </div>
+
             </div>
+
         </nav>
 
         <main>
@@ -29,7 +110,7 @@
             <div class="container">
     
                 <div class="busca_csv">
-                    <p> Clique no botão ao lado para selecionar o arquivo .CSV </p>
+                    <p> Clique no botão ao lado para selecionar o arquivo .TXT </p>
                     <input id='inputFile' type='file' accept='text/plain' onchange='renderizaTabela(event)'><br>
                 </div>
                 
@@ -38,16 +119,17 @@
                 </div>
 
                 <div class="search_nr_ocorrencia">
-                    <p> Digite aqui o número da ocorrencia a ser pesquisada </p>
+                    <p> Digite aqui o número da ocorrencia a ser pesquisada, após tecle ENTER </p>
                     <input type=”search” id="pesquisa" placeholder="nr da ocorrencia" disabled onchange='trata_input(event)'>
                 </div>
 
+                <br>
                 <hr>
-
+                
                 <div>
-                    <table id="table"></table>
+                    <table id="table" class="centered"></table>
                 </div>
-    
+                
             </div>
             
         </main>
@@ -60,23 +142,18 @@
             </div>
         </footer>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.modal').modal();
+            });
+        </script>
+
     </body>
+    
+    <script src="./js/materialize.min.js"></script>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script src="js/grafico.js"></script>
+
 </html>
-
-
-    <!-- <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#table').DataTable({
-                    "language": {
-                        "lengthMenu": "Mostrando _MENU_ registros por página",
-                        "zeroRecords": "Nada encontrado",
-                        "info": "Mostrando página _PAGE_ de _PAGES_",
-                        "infoEmpty": "Nenhum registro disponível",
-                        "infoFiltered": "(filtrado de _MAX_ registros no total)"
-                    }
-                });
-        });
-    </script> -->
